@@ -154,6 +154,11 @@ static void _convertToGrey(InputArray _in, OutputArray _out) {
         _in.copyTo(_out);
 }
 
+Mat thresholdedMat;
+
+Mat getThresholdedMat() {
+    return thresholdedMat;
+}
 
 /**
   * @brief Threshold input image using adaptive thresholding
@@ -163,6 +168,7 @@ static void _threshold(InputArray _in, OutputArray _out, int winSize, double con
     CV_Assert(winSize >= 3);
     if(winSize % 2 == 0) winSize++; // win size must be odd
     adaptiveThreshold(_in, _out, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, winSize, constant);
+    thresholdedMat = _out.getMatRef().clone();
 }
 
 

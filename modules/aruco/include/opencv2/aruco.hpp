@@ -223,6 +223,7 @@ CV_EXPORTS_W void detectMarkers(InputArray image, const Ptr<Dictionary> &diction
                                 OutputArrayOfArrays rejectedImgPoints = noArray(), InputArray cameraMatrix= noArray(), InputArray distCoeff= noArray());
 
 
+CV_EXPORTS_W Mat getThresholdedMat();
 
 /**
  * @brief Pose estimation for single markers
