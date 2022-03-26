@@ -171,6 +171,12 @@ static void _threshold(InputArray _in, OutputArray _out, int winSize, double con
     thresholdedMat = _out.getMatRef().clone();
 }
 
+vector< vector< Point > > contourResult;
+
+vector< vector< Point > > getContours() {
+    return contourResult;
+}
+
 
 /**
   * @brief Given a tresholded image, find the contours, calculate their polygonal approximation
@@ -237,6 +243,7 @@ static void _findMarkerContours(InputArray _in, vector< vector< Point2f > > &can
         candidates.push_back(currentCandidate);
         contoursOut.push_back(contours[i]);
     }
+    contourResult = contoursOut;
 }
 
 

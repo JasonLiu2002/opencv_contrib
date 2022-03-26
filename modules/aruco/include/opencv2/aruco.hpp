@@ -225,6 +225,8 @@ CV_EXPORTS_W void detectMarkers(InputArray image, const Ptr<Dictionary> &diction
 
 CV_EXPORTS_W Mat getThresholdedMat();
 
+CV_EXPORTS_W std::vector< std::vector< Point > > getContours();
+
 /**
  * @brief Pose estimation for single markers
  *
